@@ -6,8 +6,7 @@ export default class Mymenu extends React.Component {
     render() {
         return (<Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
-               <Link to="/">  <Icon type="desktop" /> <span>首页</span>
-            </Link>   
+               <Link to="/"><Icon type="desktop" /> <span>首页</span></Link>   
             </Menu.Item>
             <SubMenu key="sub1" title={<span> <Icon type="user" /><span>User</span></span>}>
                 <Menu.Item key="3">Tom</Menu.Item>
@@ -44,7 +43,7 @@ export default class Mymenu extends React.Component {
             </SubMenu>
 
             <SubMenu key="sub122" title={<span> <Icon type="user" /><span>平台管理</span></span>}>
-                <Menu.Item key="3123">租户管理</Menu.Item>
+                <Menu.Item key="3123"><Link to="/tenantmanager">租户管理</Link></Menu.Item>
                 <Menu.Item key="4123">人员管理</Menu.Item>
                 <Menu.Item key="533">Alex</Menu.Item>
             </SubMenu>
