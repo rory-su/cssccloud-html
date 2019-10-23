@@ -66,8 +66,11 @@ table {
 }
 
 /* 自定义 */
-
-
+/* 登录页面 */
+.loginSection{
+	padding-bottom: 0px!important;
+} 
+/* 登录页面 */
 .mainTop{
 	height:50px !important;	
 	line-height:50px !important;
@@ -79,9 +82,10 @@ table {
   position:relative;
   top:2px;
 }
-
 .myMenuSider{
   height:calc(100vh - 50px) !important;
   /* min-height:calc(100vh - 50px) !important; */
 }
+
+
 `

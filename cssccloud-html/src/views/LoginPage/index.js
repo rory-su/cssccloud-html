@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
+import myapi from '../../api';
 import * as configs from '../../configs';
 import LogoImg from '../../static/images/compLogo.png'
 import { Form, Input, Button, Icon,message } from 'antd';
@@ -16,8 +16,14 @@ const LoginPage=Form.create()(class Page extends Component{
         });
     }; 
     login=(account,password)=>{
-      axios.post(configs.SERVICE_URL+"/loginaction?username="+account+"&password="+password).then((res)=>{
+        myapi.post(configs.SERVICE_URL+"/loginaction?username="+account+"&password="+password).then((res)=>{
            console.log("res",res)
+           const data=res.data;
+           if(data.status=="203"){
+               this.props.history.replace("/")
+           }else{
+               message.error(data.message);
+           }
       }).catch(err=>{
           message.error("网络请求出错")
       })
@@ -25,7 +31,7 @@ const LoginPage=Form.create()(class Page extends Component{
     render(){
         const { getFieldDecorator } = this.props.form;
         return<Main>
-        <Header>
+        <Header >
             <HeaderLeft>
             <Logo />
             <SystemName>船海智云</SystemName>
@@ -36,8 +42,8 @@ const LoginPage=Form.create()(class Page extends Component{
                 <HeaderItem>支持与服务</HeaderItem>
             </HeaderRight>
         </Header>
-        <Section>
-         <LoginFormDiv>
+        <Section className="loginSection">
+         <LoginFormDiv >
                 <FormTitel>账户登录</FormTitel>
                 <Form onSubmit={this.handleSubmit}>
                     <Item>
@@ -94,13 +100,13 @@ export default  connect(mapStateToProps,mapDispatchToProps)(LoginPage) ;
 
 const Main = styled.div`
  width: 100%;
- height: 100%;
+ height: 100vh;
+ background:#C4E1FF;
 `
 const Header = styled.div`
  width: 100%;
  height: 50px;
  position: fixed;
- background:yellow;
  top: 0px;
  z-index:100;
  background: white;
@@ -142,7 +148,6 @@ const Section = styled.div`
  padding-bottom:50px;
  box-sizing:boder-box;
  overflow: auto;
- background: #F0F5F7;
 `
 const Footer = styled.div`
  width: 100%;
