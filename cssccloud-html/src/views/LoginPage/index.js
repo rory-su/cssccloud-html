@@ -16,7 +16,7 @@ const LoginPage=Form.create()(class Page extends Component{
         });
     }; 
     login=(account,password)=>{
-        myapi.post(configs.SERVICE_URL+"/loginaction?username="+account+"&password="+password).then((res)=>{
+        myapi.post(configs.SERVICE_URL+"/loginaction?username="+account+"&password="+password,).then((res)=>{
            console.log("res",res)
            const data=res.data;
            if(data.status=="203"){

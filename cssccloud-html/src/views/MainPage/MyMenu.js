@@ -3,10 +3,29 @@ import { Menu, Icon } from 'antd';
 import { Link } from "react-router-dom";
 const { SubMenu } = Menu;
 export default class Mymenu extends React.Component {
+    constructor(props){
+        super(props)
+        this.state={
+            defaultSelectedKeys:"1"  
+        }
+    }
+    componentDidMount(){
+        const defaultSelectedKeys=this.props.location.pathname
+        this.setState({
+            defaultSelectedKeys:defaultSelectedKeys
+        })
+    }
+    handelonSelect=(e)=>{
+        this.setState({
+            defaultSelectedKeys:e.key
+        })
+    }
     render() {
-        return (<Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+        const {defaultSelectedKeys}=this.state;
+        console.log("fdfsdfsdsujinquan",defaultSelectedKeys)
+        return (<Menu theme="dark" defaultSelectedKeys={["1"]} selectedKeys={[defaultSelectedKeys]} mode="inline" onSelect={this.handelonSelect}>
             <Menu.Item key="1">
-               <Link to="/"><Icon type="desktop" /> <span>首页</span></Link>   
+               <Link to="/"><Icon type="home"/> <span>首页</span></Link>   
             </Menu.Item>
             <SubMenu key="sub1" title={<span> <Icon type="user" /><span>User</span></span>}>
                 <Menu.Item key="3">Tom</Menu.Item>
@@ -30,22 +49,20 @@ export default class Mymenu extends React.Component {
                 <Menu.Item key="5fdf">Alex</Menu.Item>
             </SubMenu>
 
-            <SubMenu key="sub2" title={<span><Icon type="team" /><span>后台管理</span></span>}>
-                <SubMenu key="sub122121" title={<span>人力资源</span>}>
-                    <Menu.Item key="6">组织机构</Menu.Item>
-                    <Menu.Item key="8">人员管理</Menu.Item>
-                </SubMenu>
-                <SubMenu key="sub2131" title={<span>资源管理</span>}>
-                    <Menu.Item key="91231">菜单管理</Menu.Item>
-                    <Menu.Item key="10">权限管理</Menu.Item>
-                </SubMenu>
-          
+            <SubMenu key="sub2" title={<span><Icon type="sliders" /><span>后台管理</span></span>}>
+                    <Menu.Item key="/institution"><Link to="/institution">组织机构</Link></Menu.Item>
+                    <Menu.Item key="/persons"><Link to="/persons">人员管理</Link></Menu.Item>
+                    <Menu.Item key="/menus"><Link to="/menus">菜单管理</Link></Menu.Item>
+                    <Menu.Item key="/menus"><Link to="/menus">权限管理(菜单)</Link></Menu.Item>
+                    <Menu.Item key="/menus"><Link to="/menus">资源管理</Link></Menu.Item>
+                    <Menu.Item key="/authority"><Link to="/authority">权限管理(资源)</Link></Menu.Item>
+
             </SubMenu>
 
-            <SubMenu key="sub122" title={<span> <Icon type="user" /><span>平台管理</span></span>}>
-                <Menu.Item key="3123"><Link to="/tenantmanager">租户管理</Link></Menu.Item>
-                <Menu.Item key="4123">人员管理</Menu.Item>
-                <Menu.Item key="533">Alex</Menu.Item>
+            <SubMenu key="sub122" title={<span> <Icon type="cloud" /><span>平台管理</span></span>}> 
+                <Menu.Item key="/tenantmanager"><Link to="/tenantmanager">租户管理</Link></Menu.Item>
+                <Menu.Item key="/platusermanange"><Link to="/platusermanange">人员管理</Link></Menu.Item>
+                <Menu.Item key="/logpage"><Link to="/logpage">日志管理</Link></Menu.Item>
             </SubMenu>
         </Menu>)
     }

@@ -65,7 +65,7 @@ export default class MainPage extends React.Component {
                     <Layout>
                         <Sider className="myMenuSider" collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
                             <div className="logo" />
-                             <Mymenu/>
+                             <Mymenu {...this.props}/>
                         </Sider>
                         <Layout>
                             <Content style={{ margin: '20px 5px 0 16px' }}>
@@ -105,9 +105,10 @@ const RightItem = styled.div`
      }
 `
 const MyContent=styled.div`
-  padding: 24;
   background:#fff;
+  padding-left:10px;
   min-height:calc(100vh - 115px);
   max-height:calc(100vh - 115px);
   overflow:auto;
+
 `

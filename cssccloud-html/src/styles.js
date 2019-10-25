@@ -84,8 +84,34 @@ table {
 }
 .myMenuSider{
   height:calc(100vh - 50px) !important;
-  /* min-height:calc(100vh - 50px) !important; */
+  overflow:auto;
+  padding-bottom:100px !important;
+}
+.myMenuSider .ant-menu{
+	padding-bottom:50px;
 }
 
+/* 平台管理_用户管理 */
+.plat_user_sider{
+	
+}
+.plat_user_sider .ant-layout-sider-children{
+	position:relative;
+	overflow: auto;
+	padding:0 2px;
+	height: calc(100vh - 160px);
+}
+
+.plat_user_sider .ant-list-item{
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.plat_user_content{
+	background:white;
+	padding-left:10px;
+}
+
+/* 平台管理_用户管理 end */
 
 `
