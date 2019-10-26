@@ -91,6 +91,62 @@ table {
 	padding-bottom:50px;
 }
 
+/* 人力资源管理 */
+.humanResourceTabs .ant-tabs-bar{
+	margin:0px;
+}
+.deptment_sider{
+	min-height: calc(100vh - 150px);
+    overflow:auto;
+	border-right:1px solid #edf4f9;
+	padding-top:8px
+}
+.deptment_content{
+	background:white;
+	padding: 5px 20px;
+}
+.person_sider{
+	min-height: calc(100vh - 150px);
+    /* overflow:auto; */
+	border-right:1px solid #edf4f9;
+	padding-top:8px;
+	position:relative;
+}
+.person_sider.ant-layout-sider-collapsed{
+	flex:0 0 3px !important;
+	min-width:3px  !important;
+	width:3px  !important;
+}
+.person_sider.ant-layout-sider-collapsed .ant-layout-sider-trigger{
+  width:30px !important;
+  height:50px !important;
+  position:absolute;
+  top:50%;
+  margin-top:-25px;
+  background:gray !important;
+  right:-30px;
+  z-index:10000
+}
+.person_sider .ant-layout-sider-trigger{
+  width:30px !important;
+  height:50px !important;
+  position:absolute;
+  top:50%;
+  margin-top:-25px;
+  background:gray !important;
+  right:0px;
+}
+
+.person_content{
+	background:white;
+	padding: 5px 20px;
+	z-index:9000
+}
+
+
+
+/* 人力资源管理——end */
+
 /* 平台管理_用户管理 */
 .plat_user_sider{
 	

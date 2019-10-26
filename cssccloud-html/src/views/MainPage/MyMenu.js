@@ -50,13 +50,8 @@ export default class Mymenu extends React.Component {
             </SubMenu>
 
             <SubMenu key="sub2" title={<span><Icon type="sliders" /><span>后台管理</span></span>}>
-                    <Menu.Item key="/institution"><Link to="/institution">组织机构</Link></Menu.Item>
-                    <Menu.Item key="/persons"><Link to="/persons">人员管理</Link></Menu.Item>
-                    <Menu.Item key="/menus"><Link to="/menus">菜单管理</Link></Menu.Item>
-                    <Menu.Item key="/menus"><Link to="/menus">权限管理(菜单)</Link></Menu.Item>
-                    <Menu.Item key="/menus"><Link to="/menus">资源管理</Link></Menu.Item>
-                    <Menu.Item key="/authority"><Link to="/authority">权限管理(资源)</Link></Menu.Item>
-
+                    <Menu.Item key="/humanresource"><Link to="/humanresource">人力资源</Link></Menu.Item>
+                    <Menu.Item key="/resource"><Link to="/resource">资源管理</Link></Menu.Item>
             </SubMenu>
 
             <SubMenu key="sub122" title={<span> <Icon type="cloud" /><span>平台管理</span></span>}> 

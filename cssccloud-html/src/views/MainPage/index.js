@@ -68,7 +68,7 @@ export default class MainPage extends React.Component {
                              <Mymenu {...this.props}/>
                         </Sider>
                         <Layout>
-                            <Content style={{ margin: '20px 5px 0 16px' }}>
+                            <Content style={{ margin: '10px 5px 0 10px' }}>
                                 <MyContent >
                                    <MyRouter/>
                                 </MyContent>
@@ -107,8 +107,8 @@ const RightItem = styled.div`
 const MyContent=styled.div`
   background:#fff;
   padding-left:10px;
-  min-height:calc(100vh - 115px);
-  max-height:calc(100vh - 115px);
+  min-height:calc(100vh - 105px);
+  max-height:calc(100vh - 105px);
   overflow:auto;
 
 `
